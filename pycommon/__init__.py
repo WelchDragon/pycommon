@@ -1,2 +1,2 @@
 from .base import Money, BaseMoney
-from .models.base import BaseModel
+from .base_two import BaseModel

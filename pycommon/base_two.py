@@ -1,6 +1,6 @@
 from typing import Any, Optional, Type, Union
 
-from pycommon.base import Money
+from .base import Money
 from tortoise import Model, fields
 
 

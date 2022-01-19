@@ -1,4 +1,4 @@
-from pycommon.models.base import BaseModel, MoneyField
+from pycommon.base_two import BaseModel, MoneyField
 from tortoise import fields
 
 

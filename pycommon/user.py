@@ -1,4 +1,4 @@
-from pycommon.models.base import BaseModel
+from pycommon.base_two import BaseModel
 from tortoise import fields
 
 
