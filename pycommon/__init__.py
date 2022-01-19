@@ -1,2 +1,2 @@
 from .base import Money, BaseMoney
-from .models import UserOrder
+from .models.user import UserOrder
