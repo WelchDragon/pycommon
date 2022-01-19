@@ -9,6 +9,10 @@ class BaseModel(Model):
 
     class Meta:
         abstract = True
+    
+
+    def __init__(self) -> None:
+        super().__init__()
 
 
 class MoneyField(fields.BigIntField, Money):
