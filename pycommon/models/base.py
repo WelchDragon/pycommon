@@ -1,6 +1,6 @@
 from typing import Any, Optional, Type, Union
 
-from .base import Money
+from pycommon.base import Money
 from tortoise import Model, fields
 
 
@@ -10,9 +10,6 @@ class BaseModel(Model):
     class Meta:
         abstract = True
     
-
-    def __init__(self) -> None:
-        super().__init__()
 
 
 class MoneyField(fields.BigIntField, Money):

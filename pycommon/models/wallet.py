@@ -1,6 +1,6 @@
 from enum import Enum
 
-from pycommon.base_two import BaseModel, MoneyField
+from .base import BaseModel, MoneyField
 from tortoise import Model, fields
 
 
