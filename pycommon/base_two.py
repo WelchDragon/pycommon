@@ -31,6 +31,3 @@ class MoneyField(fields.BigIntField, Money):
         if value is None or isinstance(value, Money):
             return value
         return Money(value)
-
-    def __init__(self, val: Any) -> None:
-        super().__init__(val)
