@@ -33,7 +33,7 @@ class UserOrder(Model):
     price = MoneyField()
     side = fields.CharEnumField(UserOrderSide)
     complete_status = fields.CharEnumField(UserOrderCompleteStatus)
-    dock - fields.CharField(140, default='')
+    dock = fields.CharField(140, default='')
 
     def __str__(self) -> str:
         return f"<{self.id} [amount={self.amount}, price={self.price}, side={self.side}, status={self.complete_status}]>"
