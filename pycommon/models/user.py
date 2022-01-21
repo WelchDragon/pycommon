@@ -7,7 +7,6 @@ class User(BaseModel):
     password = fields.CharField(128)
     full_name = fields.CharField(130)
     two_fa_token = fields.CharField(130, default='')
-    fio = fields.CharField(15, default='')
 
     class Meta:
         table = 'db_user'
