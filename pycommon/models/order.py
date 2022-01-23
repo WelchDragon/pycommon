@@ -32,8 +32,7 @@ class UserOrder(Model):
     datetime = fields.DatetimeField(auto_now_add=True)
     price = MoneyField()
     side = fields.CharEnumField(UserOrderSide)
-    complete_status = fields.CharEnumField(UserOrderCompleteStatus)
-    dock = fields.CharField(140, default='')
+    complete_status = fields.CharEnumField(UserOrderCompleteStatus)    
 
     def __str__(self) -> str:
         return f"<{self.id} [amount={self.amount}, price={self.price}, side={self.side}, status={self.complete_status}]>"
