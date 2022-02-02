@@ -73,7 +73,7 @@ class Money:
     __rmul__ = __mul__
 
     def __imul__(self, other):
-        self.val = Money(self.val * Money(other).val / 100000000).val
+        self.val = Money(self.val * Money(other).val ).val / 100000000
         return self
 
     def __truediv__(self, other):
@@ -84,7 +84,7 @@ class Money:
         return Money(Money(other).val / self.val * 100000000)
 
     def __itruediv__(self, other):
-        self.val = Money(self.val / Money(other).val * 100000000).val
+        self.val = Money(self.val / Money(other).val).val * 100000000
         return self
 
     __div__ = __truediv__

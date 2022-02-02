@@ -7,7 +7,7 @@ class Currency(BaseModel):
     title = fields.CharField(30)
     approval_count = fields.BigIntField()
     network = fields.CharField(100)
-    trading_fee_percent = MoneyField(default=0)
+    trading_fee_percent = fields.FloatField(default=0)
     trading_min_amount = MoneyField(default = 0)
 
     def __str__(self) -> str:
