@@ -77,6 +77,7 @@ class Money:
         return self
 
     def __truediv__(self, other):
+        print(type(other))
         return Money(self.val / Money(other).val)
 
     def __rtruediv__(self, other):
