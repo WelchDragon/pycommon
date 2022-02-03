@@ -8,7 +8,7 @@ BaseConfig.arbitrary_types_allowed = True
 class Money:
     def __init__(self, val: Any) -> None:
         if isinstance(val, int):
-            self.val = val * 100000000
+            self.val = val
         elif isinstance(val, float):
             self.val = int(val * 100000000)
         elif isinstance(val, Money):
@@ -68,23 +68,23 @@ class Money:
         return self
 
     def __mul__(self, other):
-        return Money(self.val * Money(other).val / 100000000)
+        return Money(self.val * Money(other).val)
 
     __rmul__ = __mul__
 
     def __imul__(self, other):
-        self.val = Money(self.val * Money(other).val ).val / 100000000
+        self.val = Money(self.val * Money(other).val ).val
         return self
 
     def __truediv__(self, other):
         print(type(other))
-        return Money(self.val / Money(other).val * 100000000)
+        return Money(self.val / Money(other).val)
 
     def __rtruediv__(self, other):
-        return Money(Money(other).val / self.val * 100000000)
+        return Money(Money(other).val / self.val)
 
     def __itruediv__(self, other):
-        self.val = Money(self.val / Money(other).val).val * 100000000
+        self.val = Money(self.val / Money(other).val).val 
         return self
 
     __div__ = __truediv__
