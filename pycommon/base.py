@@ -80,10 +80,10 @@ class Money:
         return Money(self.val / Money(other).val * 100000000)
 
     def __rtruediv__(self, other):
-        return Money(Money(other).val / self.val * 100000000)
+        return Money(Money(other).val / self.val)
 
     def __itruediv__(self, other):
-        self.val = Money(self.val / Money(other).val * 100000000).val 
+        self.val = Money(self.val / Money(other).val).val 
         return self
 
     __div__ = __truediv__
