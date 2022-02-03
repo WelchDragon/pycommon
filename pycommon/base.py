@@ -14,8 +14,7 @@ class Money:
         elif isinstance(val, Money):
             self.val = val.val
         else:
-            raise ValueError(f'invalid money type conversion {val}')
-        print(self.val)
+            raise ValueError(f'invalid money type conversion {val}')        
 
     def __float__(self) -> str:
         return round(self.val / 100000000, 8)
