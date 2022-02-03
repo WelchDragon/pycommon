@@ -8,7 +8,7 @@ BaseConfig.arbitrary_types_allowed = True
 class Money:
     def __init__(self, val: Any) -> None:
         if isinstance(val, int):
-            self.val = val
+            self.val = val * 100000000
         elif isinstance(val, float):
             self.val = int(val * 100000000)
         elif isinstance(val, Money):
