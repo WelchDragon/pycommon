@@ -2,6 +2,7 @@ from email.policy import default
 from enum import Enum
 
 from .base import MoneyField
+from pycommon.base import Money
 from tortoise import Model, fields
 
 
@@ -33,7 +34,7 @@ class UserOrder(Model):
     price = MoneyField()
     side = fields.CharEnumField(UserOrderSide)
     complete_status = fields.CharEnumField(UserOrderCompleteStatus)    
-    commission = MoneyField(default=0.0)
+    commission = MoneyField(default=Money(0))
 
     def __str__(self) -> str:
         return f"<{self.id} [amount={self.amount}, price={self.price}, side={self.side}, status={self.complete_status}]>"
