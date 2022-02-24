@@ -118,10 +118,7 @@ class BaseMoney(BaseModel):
             
             if not isinstance(checked_value, Money):
                 if isinstance(checked_value, float):
-                    values[field] = Money(round(checked_value * 100000000))
-                    print(field)
-                    print(type(checked_value))
-                    print(values[field])
+                    values[field] = Money(round(checked_value * 100000000))                    
                 elif isinstance(checked_value, str):
                     values[field] = Money(round(float(checked_value) * 100000000))                    
                 elif isinstance(checked_value, int):                    
