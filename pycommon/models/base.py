@@ -20,6 +20,7 @@ class MoneyField(fields.BigIntField, Money):
         return {}
 
     def to_db_value(self, value: Money, instance: "Union[Type[Model], Model]") -> Optional[int]:
+        print(value)
         if isinstance(value, Money):
             return value.val
         return value
