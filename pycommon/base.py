@@ -113,8 +113,9 @@ class BaseMoney(BaseModel):
             filter(lambda k: cls.__fields__[k].type_ == Money, cls.__fields__),
         )
 
-        for field in money_fields:
+        for field in money_fields:            
             checked_value = values.get(field)
+            print(type(checked_value))
             if not isinstance(checked_value, Money):
                 if isinstance(checked_value, float):
                     values[field] = Money(round(checked_value * 100000000))
