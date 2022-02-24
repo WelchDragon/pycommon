@@ -6,6 +6,7 @@ from pycommon.base import Money
 from tortoise import Model, fields
 
 
+default_zero = Money(0)
 class UserOrderSide(str, Enum):
     SELL = "SELL"
     BUY = "BUY"
@@ -24,6 +25,7 @@ class OrderType(str, Enum):
     LIMIT = "LIMIT"
 
 
+
 class UserOrder(Model):
     id = fields.UUIDField(pk=True)
     user = fields.ForeignKeyField("models.User", related_name='user_order')
@@ -34,7 +36,7 @@ class UserOrder(Model):
     price = MoneyField()
     side = fields.CharEnumField(UserOrderSide)
     complete_status = fields.CharEnumField(UserOrderCompleteStatus)    
-    commission = MoneyField(default=Money(0))
+    commission = MoneyField(default=default_zero)
 
     def __str__(self) -> str:
         return f"<{self.id} [amount={self.amount}, price={self.price}, side={self.side}, status={self.complete_status}]>"
