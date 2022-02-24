@@ -116,18 +116,13 @@ class BaseMoney(BaseModel):
         for field in money_fields:            
             checked_value = values.get(field)
             
-            if not isinstance(checked_value, Money):
-                print(field)
-                print(type(checked_value))
+            if not isinstance(checked_value, Money):                
                 if isinstance(checked_value, float):
                     values[field] = Money(round(checked_value * 100000000))                    
                 elif isinstance(checked_value, str):
                     values[field] = Money(round(float(checked_value) * 100000000))                    
                 elif isinstance(checked_value, int):
-                    print(field)
-                    print(type(checked_value))
-                    values[field] = Money(checked_value)
-                    print(values[field])
+                    values[field] = Money(checked_value)                    
                 else:
                     raise ValueError(f"'{field}' value should be 'str', 'int', 'float' or 'Money'")
             
