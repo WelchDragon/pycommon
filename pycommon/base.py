@@ -127,7 +127,7 @@ class BaseMoney(BaseModel):
                     print(field)
                     print(type(checked_value))
                     print(checked_value)
-                    values[field] = Money(checked_value)                    
+                    values[field] = checked_value
                 else:
                     raise ValueError(f"'{field}' value should be 'str', 'int', 'float' or 'Money'")
             
