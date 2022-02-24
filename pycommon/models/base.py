@@ -20,14 +20,11 @@ class MoneyField(fields.BigIntField, Money):
         return {}
 
     def to_db_value(self, value: Money, instance: "Union[Type[Model], Model]") -> Optional[int]:
-        print(value)
         if isinstance(value, Money):
             return value.val
         return value
 
     def to_python_value(self, value: Optional[Union[int, float, str, Money]]) -> Optional[Money]:
-        print(type(value))
-        print(value)
-        if value is None:
+        if value is None or isinstance(value, Money):
             return value
         return Money(value)
