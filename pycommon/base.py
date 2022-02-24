@@ -115,6 +115,7 @@ class BaseMoney(BaseModel):
 
         for field in money_fields:            
             checked_value = values.get(field)
+            print(field)
             print(type(checked_value))
             if not isinstance(checked_value, Money):
                 if isinstance(checked_value, float):
