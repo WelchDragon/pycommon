@@ -97,7 +97,7 @@ class BaseMoney(BaseModel):
             Money: lambda v: float(v),
         }
 
-    @root_validator
+    @root_validator(pre=True)
     def check_money_type(cls, values):
         '''
         parse class __fields__ dict and find Money fields
