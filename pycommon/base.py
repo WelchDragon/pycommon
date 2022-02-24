@@ -126,6 +126,7 @@ class BaseMoney(BaseModel):
                 elif isinstance(checked_value, int):
                     print(field)
                     print(type(checked_value))
+                    print(checked_value)
                     values[field] = Money(checked_value)                    
                 else:
                     raise ValueError(f"'{field}' value should be 'str', 'int', 'float' or 'Money'")
