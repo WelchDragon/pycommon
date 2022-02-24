@@ -28,6 +28,6 @@ class MoneyField(fields.BigIntField, Money):
     def to_python_value(self, value: Optional[Union[int, float, str, Money]]) -> Optional[Money]:
         print(type(value))
         print(value)
-        if value is None or isinstance(value, Money):
+        if value is None:
             return value
         return Money(value)
